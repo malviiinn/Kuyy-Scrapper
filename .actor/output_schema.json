@@ -1,0 +1,89 @@
+
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/kuyy-scraper/output.schema.json",
+  "title": "Kuyy Scraper Output Schema",
+  "description": "Skema output untuk item Dataset yang dihasilkan oleh Kuyy Scraper.",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["activity", "scraped_at"],
+  "properties": {
+    "id": {
+      "description": "ID event dari sumber.",
+      "type": ["string", "number", "null"]
+    },
+    "activity": {
+      "description": "Kategori aktivitas event.",
+      "type": "string",
+      "enum": ["tennis", "padel", "softball", "yoga", "workout", "cycling", "climbing", "badminton"]
+    },
+    "title": {
+      "description": "Judul/nama event.",
+      "type": ["string", "null"]
+    },
+    "description": {
+      "description": "Deskripsi event.",
+      "type": ["string", "null"]
+    },
+    "start_timestamp": {
+      "description": "Timestamp awal dari API (format asli).",
+      "type": ["string", "null"]
+    },
+    "end_timestamp": {
+      "description": "Timestamp akhir dari API (format asli).",
+      "type": ["string", "null"]
+    },
+    "start_local": {
+      "description": "Datetime ISO hasil parse start_timestamp.",
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "end_local": {
+      "description": "Datetime ISO hasil parse end_timestamp.",
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "location": {
+      "description": "Alamat/venue event.",
+      "type": ["string", "null"]
+    },
+    "latitude": {
+      "description": "Koordinat lintang.",
+      "type": ["number", "null"]
+    },
+    "longitude": {
+      "description": "Koordinat bujur.",
+      "type": ["number", "null"]
+    },
+    "price": {
+      "description": "Harga atau label harga.",
+      "type": ["string", "number", "null"]
+    },
+    "status": {
+      "description": "Status event.",
+      "type": ["string", "null"]
+    },
+    "type": {
+      "description": "Tipe visibilitas event.",
+      "type": ["string", "null"]
+    },
+    "image_url": {
+      "description": "URL gambar event.",
+      "type": ["string", "null"],
+      "format": "uri"
+    },
+    "host_name": {
+      "description": "Nama penyelenggara/host.",
+      "type": ["string", "null"]
+    },
+    "raw": {
+      "description": "Payload asli dari API sumber.",
+      "type": ["object", "array"],
+      "additionalProperties": true
+    },
+    "scraped_at": {
+      "description": "Waktu proses scraping (ISO).",
+      "type": "string",
+      "format": "date-time"
+    }
+  }
