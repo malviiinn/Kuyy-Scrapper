@@ -1,0 +1,48 @@
+
+{
+  "actorSpecification": 1,
+  "name": "my-kuyy-scraper",
+  "title": "Kuyy Scraper (API-first)",
+  "version": "0.3",
+  "buildTag": "latest",
+  "input": {
+    "title": "Input",
+    "type": "object",
+    "properties": {
+      "province": { "title": "Provinsi", "type": "string" },
+      "city": { "title": "Kota", "type": "string" },
+      "activity": {
+        "title": "Jenis kegiatan",
+        "type": "string",
+        "enum": ["tennis", "padel", "softball", "yoga", "workout", "cycling", "climbing", "badminton"]
+      },
+      "daysRange": {
+        "title": "Rentang hari",
+        "type": "integer",
+        "enum": [3, 7, 15, 30, 60, 90, 365],
+        "default": 7
+      },
+      "maxItems": {
+        "title": "Batas items",
+        "type": "integer",
+        "default": 500
+      },
+      "distance": {
+        "title": "Radius km dari pusat kota",
+        "type": "number",
+        "default": 15
+      },
+      "limitPerPage": {
+        "title": "Items per page",
+        "type": "integer",
+        "default": 50
+      },
+      "baseApiUrl": {
+        "title": "Events API URL",
+        "type": "string",
+        "default": "https://kuyy.app/api/events"
+      }
+    },
+    "required": ["province", "city", "activity", "daysRange"]
+  }
+}

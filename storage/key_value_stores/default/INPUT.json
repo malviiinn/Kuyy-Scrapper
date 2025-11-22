@@ -1,0 +1,12 @@
+{
+  "daysRange": 7,
+  "maxItems": 200,
+  "distance": 20,
+  "limitPerPage": 50,
+  "baseApiUrl": "https://kuyy.app/api/events",
+  "province": "DKI Jakarta",
+  "city": "Jakarta Selatan",
+  "latitude": -6.2607,
+  "longitude": 106.7816,
+  "activity": "tennis"
+}

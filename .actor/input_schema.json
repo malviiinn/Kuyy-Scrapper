@@ -1,0 +1,65 @@
+{
+  "title": "Kuyy Scraper Input",
+  "description": "Pilih kota/provinsi, satu kegiatan, <name> untuk scraping dari API kuyy.app.",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "province": {
+      "title": "<name>",
+      "description": "Contoh: 'DKI Jakarta', 'Banten'.",
+      "type": "string",
+      "editor": "textfield"
+    },
+    "city": {
+      "title": "Kota",
+      "description": "Contoh: 'Jakarta Selatan', '<name>'.",
+      "type": "string",
+      "editor": "textfield"
+    },
+    "activity": {
+      "title": "Jenis kegiatan",
+      "description": "Pilih salah satu saja.",
+      "type": "string",
+      "enum": ["tennis", "padel", "softball", "yoga", "workout", "cycling", "climbing", "badminton"],
+      "editor": "select"
+    },
+    "daysRange": {
+      "title": "<name>",
+      "description": "<name> hari ke depan dari hari ini.",
+      "type": "integer",
+      "default": 7,
+      "editor": "number",
+      "minimum": 1,
+      "maximum": 365
+    },
+    "maxItems": {
+      "title": "Batas items",
+      "description": "<name> item <name> dataset.",
+      "type": "integer",
+      "default": 500,
+      "editor": "number"
+    },
+    "distance": {
+      "title": "Radius (km) dari pusat kota",
+      "description": "Radius kilometer dari titik <name> geocode.",
+      "type": "number",
+      "default": 20,
+      "editor": "number"
+    },
+    "limitPerPage": {
+      "title": "Items per page",
+      "description": "<name> item per request API.",
+      "type": "integer",
+      "default": 50,
+      "editor": "number"
+    },
+    "baseApiUrl": {
+      "title": "Events API URL",
+      "description": "Endpoint list event kuyy.app (default: /api/events).",
+      "type": "string",
+      "default": "https://kuyy.app/api/events",
+      "editor": "textfield"
+    }
+  },
+  "required": ["province", "city", "activity", "daysRange"]
+}
